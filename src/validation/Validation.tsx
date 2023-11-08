@@ -2,29 +2,30 @@ import * as Yup from 'yup'
 
 const validationSchema = Yup.object({
     title: Yup.string()
-        .required('Required'),
+        .required('title is Required'),
     surname: Yup.string()
-        .required('Required'),
+        .required('surname is Required'),
+        middlename: Yup.string().required('middlename is Required'),
     firstname: Yup.string()
-        .required('Required'),
-    middlename: Yup.string()
-        .required('Required'),
+        .required('firstname is Required'),
     gender: Yup.string()
-        .required('Required'),
+        .required('gender is Required'),
     dob: Yup.string()
-        .required('Required'),
+        .required('dob is Required'),
     email: Yup.string()
         .email('Invalid email')
-        .required('Required'),
+        .required('email is Required'),
     phoneNumber: Yup.string()
-        .required('Required'),
+        .required('phone number is Required').min(11).max(11),
+        state: Yup.string().required('state is Required'),
     identificationNumber: Yup.string()
-        .required('Required'),
-    identificationType: Yup.string(),
-    file: Yup.string(),
-    occupation: Yup.string().required('Required'),
-    address: Yup.string().required('Required'),
-    state: Yup.string().required('Required'),
+        .required('ID isRequired'),
+    occupation: Yup.string().required("occupation is Required"),
+    identificationType: Yup.string().required("identificationType is Required"),
+    premium: Yup.string().required('premium Required'),
+    sumAssured: Yup.string().required('sumAssured is Required'),
+    paymentFrequency: Yup.string().required('paymentFrequency is Required'),
 })
+
 
 export default validationSchema
